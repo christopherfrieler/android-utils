@@ -20,6 +20,8 @@ android {
 		android.libraryVariants.all { outputs.all {
 			outputFileName = outputFileName.replace("$archivesBaseName", "$archivesBaseName-$version") }
 		}
+
+		consumerProguardFile('proguard-rules.pro')
 	}
 
 	buildTypes {
