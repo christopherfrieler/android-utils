@@ -53,11 +53,18 @@ task sourcesJar(type: Jar) {
 	classifier = 'sources'
 }
 
+task kdocJar(type: Jar, dependsOn: dokka) {
+	from "$buildDir/dokka"
+	classifier = 'kdoc'
+	archiveName = "${project.name}-${version}-${classifier}.jar"
+}
+
 publishing {
 	publications {
 		maven(MavenPublication) {
 			artifact(bundleRelease)
 			artifact(sourcesJar)
+			artifact(kdocJar)
 		}
 	}
 }
