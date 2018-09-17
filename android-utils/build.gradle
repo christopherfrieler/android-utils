@@ -13,6 +13,10 @@ android {
 
 		versionCode 1
 		versionName = "$version"
+		// append version to android build-artifacts:
+		android.libraryVariants.all { outputs.all {
+			outputFileName = outputFileName.replace("$archivesBaseName", "$archivesBaseName-$version") }
+		}
 	}
 
 	buildTypes {
