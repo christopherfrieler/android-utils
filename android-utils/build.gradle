@@ -1,4 +1,6 @@
 apply plugin: 'com.android.library'
+apply plugin: 'kotlin-android'
+apply plugin: 'org.jetbrains.dokka-android'
 apply plugin: 'maven-publish'
 
 android {
@@ -30,9 +32,18 @@ android {
 			}
 		}
 	}
+
+	sourceSets {
+		main.java.srcDirs += 'src/main/kotlin/'
+		test.java.srcDirs += 'src/test/kotlin/'
+	}
 }
 
 dependencies {
+	implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+
+	testImplementation 'junit:junit:4.12'
+	testImplementation "org.jetbrains.kotlin:kotlin-test-junit:$kotlin_version"
 }
 
 task sourcesJar(type: Jar) {
