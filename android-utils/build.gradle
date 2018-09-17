@@ -1,4 +1,5 @@
 apply plugin: 'com.android.library'
+apply plugin: 'maven-publish'
 
 android {
 	compileSdkVersion 28
@@ -32,4 +33,12 @@ android {
 }
 
 dependencies {
+}
+
+publishing {
+	publications {
+		maven(MavenPublication) {
+			artifact(bundleRelease)
+		}
+	}
 }
