@@ -1,0 +1,13 @@
+language: android
+
+sudo: false
+
+android:
+  components:
+    - android-28
+    - build-tools-27.0.3
+licenses:
+  - 'android-sdk-license-.+'
+
+before_install:
+  - chmod +x gradlew
