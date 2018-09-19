@@ -1,1 +1,3 @@
+rootProject.name="android-utils-parent"
+
 include ':android-utils'
