@@ -22,5 +22,12 @@ before_install:
 
 script: ./gradlew clean testReleaseUnitTest assembleRelease
 
+deploy:
+  provider: script
+  script: ./gradlew :android-utils:bintrayUpload
+  skip_cleanup: true
+  on:
+    tags: true
+
 notifications:
   email: false
