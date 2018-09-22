@@ -2,6 +2,7 @@ apply plugin: 'com.android.library'
 apply plugin: 'kotlin-android'
 apply plugin: 'org.jetbrains.dokka-android'
 apply plugin: 'maven-publish'
+apply plugin: 'com.jfrog.bintray'
 
 android {
 	compileSdkVersion 28
@@ -67,4 +68,26 @@ publishing {
 			artifact(kdocJar)
 		}
 	}
+}
+
+bintray {
+	user = System.getenv('BINTRAY_USER')
+	key = System.getenv('BINTRAY_API_KEY')
+
+	pkg {
+		repo = 'android'
+		name = project.name
+		userOrg = 'christopherfrieler'
+		licenses = ['MIT']
+		desc = 'Utility-Functions for Android Apps'
+		vcsUrl = 'https://github.com/christopherfrieler/android-utils.git'
+		githubRepo = 'christopherfrieler/android-utils'
+
+		version {
+			name = "$version"
+		}
+	}
+	publish = true
+
+	publications = ['maven']
 }
