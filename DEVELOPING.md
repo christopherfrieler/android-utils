@@ -5,16 +5,16 @@ android-utils uses gradle and contains the gradle-wrapper. Hence, you can use th
 
 ## build
 
-build the .aar-file: ``./gradlew android-utils:assembleRelease``
+build the .aar-file: ``./gradlew assembleRelease``
 
 
 ## test
 
-run the unit-tests: ``./gradlew android-utils:testReleaseUnitTest`` 
+run the unit-tests: ``./gradlew testReleaseUnitTest`` 
 
 
 ## publish
 
-publish build-artifacts to your local maven-repository: ``./gradlew android-utils:publishToMavenLocal``
+publish build-artifacts to your local maven-repository: ``./gradlew publishToMavenLocal``
 
 Publishing to other destinations should not be done manually, but only by the CI-build.

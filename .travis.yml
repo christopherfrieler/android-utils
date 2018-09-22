@@ -11,3 +11,5 @@ licenses:
 
 before_install:
   - chmod +x gradlew
+
+script: ./gradlew clean testReleaseUnitTest assembleRelease
