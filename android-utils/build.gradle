@@ -63,6 +63,18 @@ task kdocJar(type: Jar, dependsOn: dokka) {
 publishing {
 	publications {
 		maven(MavenPublication) {
+			pom.withXml {
+				asNode().appendNode('name', 'android-utils')
+				asNode().appendNode('description', 'A collection of utility-functions for Android apps.')
+				asNode().appendNode('licenses').appendNode('license')
+						.appendNode('name', 'MIT').parent()
+						.appendNode('url', 'https://opensource.org/licenses/MIT').parent()
+				asNode().appendNode('scm')
+						.appendNode('url', 'https://github.com/christopherfrieler/android-utils').parent()
+				asNode().appendNode('developers').appendNode('developer')
+						.appendNode('name', 'Christopher Frieler').parent()
+			}
+
 			artifact(bundleRelease)
 			artifact(sourcesJar)
 			artifact(kdocJar)
