@@ -29,4 +29,8 @@ Now you can use the features briefly explained below:
 
 ## Strings
 
-``rocks.frieler.android.utils.Strings`` contains all kind of utility-functions dealing with Strings.
+`rocks.frieler.android.utils.Strings` contains all kind of utility-functions dealing with Strings.
+
+## Preconditions
+
+`rocks.frieler.android.utils.Preconditions` contains utility-functions to check the preconditions of functions.
