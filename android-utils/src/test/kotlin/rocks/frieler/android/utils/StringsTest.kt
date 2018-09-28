@@ -2,24 +2,24 @@ package rocks.frieler.android.utils
 
 import assertk.assert
 import assertk.assertions.isEqualTo
+import assertk.assertions.isFalse
+import assertk.assertions.isTrue
 import org.junit.Test
-import kotlin.test.assertFalse
-import kotlin.test.assertTrue
 
 class StringsTest {
     @Test
     internal fun testIsNullOrEmptyReturnsTrueForNull() {
-        assertTrue(Strings.isNullOrEmpty(null))
+        assert(Strings.isNullOrEmpty(null)).isTrue()
     }
 
     @Test
     internal fun testIsNullOrEmptyReturnsTrueForEmptyString() {
-        assertTrue(Strings.isNullOrEmpty(""))
+        assert(Strings.isNullOrEmpty("")).isTrue()
     }
 
     @Test
     internal fun testIsNullOrEmptyReturnsFalseForNonEmptyString() {
-        assertFalse(Strings.isNullOrEmpty("abc"))
+        assert(Strings.isNullOrEmpty("abc")).isFalse()
     }
 
     @Test
