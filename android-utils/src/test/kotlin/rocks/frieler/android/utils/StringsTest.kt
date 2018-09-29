@@ -33,6 +33,20 @@ class StringsTest {
     }
 
     @Test
+    internal fun testCountReturnsNumberOfOccurrencesOfASingleCharInAString() {
+        val count = Strings.count("hello", 'l')
+
+        assert(count).isEqualTo(2)
+    }
+
+    @Test
+    internal fun testCountReturnsNumberOfOccurrencesOfAllSearchedCharsInAString() {
+        val count = Strings.count("abc", 'a', 'c')
+
+        assert(count).isEqualTo(2)
+    }
+
+    @Test
     internal fun testRepeatProducesRepetitionOfString() {
         val repeated = Strings.repeat("hello", 3)
 

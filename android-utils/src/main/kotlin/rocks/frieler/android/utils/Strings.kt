@@ -26,6 +26,17 @@ object Strings {
     }
 
     /**
+     * Counts the occurrences of the `characters` in the given [String].
+     *
+     * @param s the [String] to search in
+     * @param characters the [Char]s to search for
+     * @return the number of occurrences of the `characters`
+     */
+    @JvmStatic fun count(s: String, vararg characters: Char): Int {
+        return s.count { c -> c in characters }
+    }
+
+    /**
      * Returns a [String] containing the given [String] repeated `n` times.
      *
      * @param s the [String] to repeat
