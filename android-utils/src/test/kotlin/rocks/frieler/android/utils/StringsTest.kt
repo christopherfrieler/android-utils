@@ -23,6 +23,13 @@ class StringsTest {
     }
 
     @Test
+    internal fun testRepeatProducesRepetitionOfString() {
+        val repeated = Strings.repeat("hello", 3)
+
+        assert(repeated).isEqualTo("hello".repeat(3))
+    }
+
+    @Test
     internal fun testJoinCreatesJoinedStringWithDefaultParameters() {
         val parts = ArrayList<String>()
         parts.add("foo")

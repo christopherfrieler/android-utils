@@ -16,6 +16,18 @@ object Strings {
     }
 
     /**
+     * Returns a [String] containing the given [String] repeated `n` times.
+     *
+     * @param s the [String] to repeat
+     * @param n the number of times to repeat `s`
+     * @return a [String] containing the given [String] repeated `n` times
+     * @see String.repeat
+     */
+    @JvmStatic fun repeat(s: String, n: Int): String {
+        return s.repeat(n)
+    }
+
+    /**
      * Joins the given parts to one [String].
      *
      * You can optionally specify a prefix, a postfix and a separator.
