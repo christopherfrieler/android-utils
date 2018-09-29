@@ -16,6 +16,16 @@ object Strings {
     }
 
     /**
+     * Returns the given [String] or `""` if it is `null`.
+     *
+     * @param s a [String] or `null`
+     * @return the [String] or `""`
+     */
+    @JvmStatic fun nullToEmpty(s: String?): String {
+        return s ?: ""
+    }
+
+    /**
      * Returns a [String] containing the given [String] repeated `n` times.
      *
      * @param s the [String] to repeat

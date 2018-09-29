@@ -23,6 +23,16 @@ class StringsTest {
     }
 
     @Test
+    internal fun testNullToEmptyReturnsNonNullString() {
+        assert(Strings.nullToEmpty("abc")).isEqualTo("abc")
+    }
+
+    @Test
+    internal fun testNullToEmptyReturnsEmptyStringForNull() {
+        assert(Strings.nullToEmpty(null)).isEqualTo("")
+    }
+
+    @Test
     internal fun testRepeatProducesRepetitionOfString() {
         val repeated = Strings.repeat("hello", 3)
 
