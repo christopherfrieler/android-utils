@@ -41,11 +41,14 @@ android {
 }
 
 dependencies {
-	api "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+	api "org.jetbrains.kotlin:kotlin-stdlib-jdk8:$kotlin_version"
 
 	testImplementation 'junit:junit:4.12'
 	testImplementation "org.jetbrains.kotlin:kotlin-test-junit:$kotlin_version"
 	testImplementation 'com.willowtreeapps.assertk:assertk-jvm:0.12'
+
+	// upgraded transitive dependencies, review when updating other dependencies:
+	testImplementation "org.jetbrains.kotlin:kotlin-reflect:$kotlin_version"
 }
 
 task sourcesJar(type: Jar) {
