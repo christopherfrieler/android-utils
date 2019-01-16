@@ -84,9 +84,11 @@ publishing {
 				}
 			}
 
-			artifact(bundleRelease)
-			artifact(sourcesJar)
-			artifact(kdocJar)
+			afterEvaluate {
+				artifact(bundleReleaseAar)
+				artifact(sourcesJar)
+				artifact(kdocJar)
+			}
 		}
 	}
 }
