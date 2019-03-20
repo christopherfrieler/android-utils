@@ -107,7 +107,7 @@ bintray {
 		githubRepo = 'christopherfrieler/android-utils'
 
 		version {
-			name = "$version"
+			name = project.version
 		}
 	}
 	publish = true
