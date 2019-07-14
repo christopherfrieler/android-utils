@@ -1,6 +1,6 @@
 package rocks.frieler.android.utils
 
-import assertk.assert
+import assertk.assertThat
 import assertk.assertions.isEqualTo
 import assertk.assertions.isFalse
 import assertk.assertions.isTrue
@@ -9,48 +9,48 @@ import org.junit.Test
 class StringsTest {
     @Test
     internal fun testIsNullOrEmptyReturnsTrueForNull() {
-        assert(Strings.isNullOrEmpty(null)).isTrue()
+        assertThat(Strings.isNullOrEmpty(null)).isTrue()
     }
 
     @Test
     internal fun testIsNullOrEmptyReturnsTrueForEmptyString() {
-        assert(Strings.isNullOrEmpty("")).isTrue()
+        assertThat(Strings.isNullOrEmpty("")).isTrue()
     }
 
     @Test
     internal fun testIsNullOrEmptyReturnsFalseForNonEmptyString() {
-        assert(Strings.isNullOrEmpty("abc")).isFalse()
+        assertThat(Strings.isNullOrEmpty("abc")).isFalse()
     }
 
     @Test
     internal fun testNullToEmptyReturnsNonNullString() {
-        assert(Strings.nullToEmpty("abc")).isEqualTo("abc")
+        assertThat(Strings.nullToEmpty("abc")).isEqualTo("abc")
     }
 
     @Test
     internal fun testNullToEmptyReturnsEmptyStringForNull() {
-        assert(Strings.nullToEmpty(null)).isEqualTo("")
+        assertThat(Strings.nullToEmpty(null)).isEqualTo("")
     }
 
     @Test
     internal fun testCountReturnsNumberOfOccurrencesOfASingleCharInAString() {
         val count = Strings.count("hello", 'l')
 
-        assert(count).isEqualTo(2)
+        assertThat(count).isEqualTo(2)
     }
 
     @Test
     internal fun testCountReturnsNumberOfOccurrencesOfAllSearchedCharsInAString() {
         val count = Strings.count("abc", 'a', 'c')
 
-        assert(count).isEqualTo(2)
+        assertThat(count).isEqualTo(2)
     }
 
     @Test
     internal fun testRepeatProducesRepetitionOfString() {
         val repeated = Strings.repeat("hello", 3)
 
-        assert(repeated).isEqualTo("hello".repeat(3))
+        assertThat(repeated).isEqualTo("hello".repeat(3))
     }
 
     @Test
@@ -61,7 +61,7 @@ class StringsTest {
 
         val joined = Strings.join(parts)
 
-        assert(joined).isEqualTo("foobar")
+        assertThat(joined).isEqualTo("foobar")
     }
 
     @Test
@@ -72,7 +72,7 @@ class StringsTest {
 
         val joined = Strings.join(parts, ", ", "[", "]", NamedThing::name)
 
-        assert(joined).isEqualTo("[This, That]")
+        assertThat(joined).isEqualTo("[This, That]")
     }
 
     class NamedThing(val name: String) {

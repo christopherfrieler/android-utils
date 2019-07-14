@@ -1,6 +1,6 @@
 package rocks.frieler.android.utils
 
-import assertk.assert
+import assertk.assertThat
 import assertk.assertions.hasMessage
 import assertk.assertions.isInstanceOf
 import assertk.assertions.isNotNull
@@ -12,7 +12,7 @@ class PreconditionsTest {
     internal fun testCheckArgumentReturnsValidArgument() {
         val checkedArgument = Preconditions.checkArgument(this, { arg -> arg == this }, "invalid")
 
-        assert(checkedArgument).isSameAs(this)
+        assertThat(checkedArgument).isSameAs(this)
     }
 
     @Test
@@ -21,7 +21,7 @@ class PreconditionsTest {
             Preconditions.checkArgument(this, { arg -> arg != this }, "invalid")
         }
 
-        assert(exception).isNotNull { theException ->
+        assertThat(exception).isNotNull().let { theException ->
             theException.isInstanceOf(IllegalArgumentException::class)
             theException.hasMessage("invalid")
         }
@@ -38,7 +38,7 @@ class PreconditionsTest {
             Preconditions.checkState(false, "invalid")
         }
 
-        assert(exception).isNotNull { theException ->
+        assertThat(exception).isNotNull().let { theException ->
             theException.isInstanceOf(IllegalStateException::class)
             theException.hasMessage("invalid")
         }
