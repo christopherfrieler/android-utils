@@ -1,4 +1,5 @@
 import com.android.build.gradle.internal.api.BaseVariantOutputImpl
+import org.jetbrains.kotlin.gradle.dsl.KotlinJvmOptions
 
 plugins {
 	id("com.android.library")
@@ -13,6 +14,9 @@ android {
 	compileOptions {
 		sourceCompatibility = JavaVersion.VERSION_1_8
 		targetCompatibility = JavaVersion.VERSION_1_8
+	}
+	kotlinOptions { this as KotlinJvmOptions
+		jvmTarget = "${compileOptions.targetCompatibility}"
 	}
 
 	defaultConfig {
@@ -49,7 +53,7 @@ dependencies {
 
 	testImplementation("junit:junit:4.12")
 	testImplementation("org.jetbrains.kotlin:kotlin-test-junit:${Dependencies.kotlin_version}")
-	testImplementation("com.willowtreeapps.assertk:assertk-jvm:0.17")
+	testImplementation("com.willowtreeapps.assertk:assertk-jvm:0.18")
 
 	// currently necessary to run tests from Android Studio:
 	testImplementation("org.jetbrains.kotlin:kotlin-reflect:${Dependencies.kotlin_version}")
