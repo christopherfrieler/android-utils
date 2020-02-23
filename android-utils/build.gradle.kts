@@ -53,7 +53,7 @@ dependencies {
 
 	testImplementation("junit:junit:4.12")
 	testImplementation("org.jetbrains.kotlin:kotlin-test-junit:${Dependencies.kotlin_version}")
-	testImplementation("com.willowtreeapps.assertk:assertk-jvm:0.18")
+	testImplementation("com.willowtreeapps.assertk:assertk-jvm:0.20")
 
 	// currently necessary to run tests from Android Studio:
 	testImplementation("org.jetbrains.kotlin:kotlin-reflect:${Dependencies.kotlin_version}")
