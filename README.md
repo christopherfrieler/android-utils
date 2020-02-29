@@ -19,7 +19,7 @@ allprojects {
 Then add android-utils to your dependencies:
 ```
 dependencies {
-    implementation 'rocks.frieler.android:android-utils:0.4.0'
+    implementation 'rocks.frieler.android:android-utils:0.5.0'
 }
 ```
 
