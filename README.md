@@ -1,3 +1,12 @@
+# IMPORTANT 
+
+**This project has been abandoned.**
+
+The provided `Strings`-functions can be used from the Kotlin standard-library, thanks to Kotlin's Java interoperability
+even from Java apps. And the `Preconditions` aren't worth an extra library project.
+
+However, since android-utils is still available via jcenter, the code will remain here and stay open-source. 
+
 # Android-Utils
 
 android-utils is a library for Android apps to provide some convenient utility-functions that are not part of the java8
